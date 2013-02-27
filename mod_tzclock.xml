@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0.0">
+    <name>Time Zone Clock</name>
+    <author>Dave Sowers</author>
+    <creationDate>Febuary 26, 2013</creationDate>
+    <copyright>This module its released under GNU/GPL license</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <authorEmail>dave@advlanguage.com</authorEmail>
+    <authorUrl>http://www.advlanguage.com</authorUrl>
+    <version>4.1</version>
+    <description> This is a javascript time module to display up to 10 different time zones.<br/>
+    <br/><br/>  <h2>Usage</h2>You must select the timezone difference from UTC/GMT and the descriptive tag you want displayed 
+    for each time zone you want to display.  If the descriptive text for a time zone is blank it will not be displayed.  <br/><br/>  
+  Daylight Saving Time is calculated for US, Europe, Australia and Iraq.
+    </description>
+
+<files>
+    <filename module="mod_tzclock">mod_tzclock.php</filename>
+	<filename module="mod_tzclock">mod_tzclock.xml</filename>
+</files>
+<config>
+		<fields name="params">
+			<fieldset name="basic">
+ 
+<field name="&lt;b&gt;Time Zone 1&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone1" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z1Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight1" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 2&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone2" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z2Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight2" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 3&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone3" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z3Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight3" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+				
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 4&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone4" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z4Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight4" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+				
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 5&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone5" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z5Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight5" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+				
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 6&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone6" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z6Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight6" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+				
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 7&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone7" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z7Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight7" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+				
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 8&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone8" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z8Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight8" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+				
+<field type="spacer" />
+<field name="&lt;b&gt;Time Zone 9&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone9" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z9Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight9" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>
+
+<field type="spacer" />				
+<field name="&lt;b&gt;Time Zone 10&lt;/b&gt; _______________________________________________________" type="spacer"/>
+				<field name="Zone10" 
+					type="text" 
+					default="" 
+					label="Label" 
+					description="The description you want displayed i.e (New York)" />
+				<field name="Z10Offset" 
+					type="list" 
+					default="" 
+					label="GMT Offset (Time Zone)" 
+					description="This is the hour offset from GMT">
+						<option value="-12">GMT -12</option>
+						<option value="-11">GMT -11</option>
+						<option value="-10">GMT -10</option>
+						<option value="tzb">GMT -9:30 Marquises Islands</option>
+						<option value="-9">GMT -9</option>
+						<option value="-8">GMT -8</option>
+						<option value="-7">GMT -7</option>
+						<option value="-6">GMT -6</option>
+						<option value="-5">GMT -5</option>
+						<option value="tzvz">GMT -4.5  Venuzuela</option>
+						<option value="-4">GMT -4</option>
+						<option value="tza">GMT -3:30 Nefoundland</option>
+						<option value="-3">GMT -3</option>
+						<option value="-2">GMT -2</option>
+						<option value="-1">GMT -1</option>
+						<option value="0">GMT</option>
+						<option value="1">GMT +1</option>
+						<option value="2">GMT +2</option>
+						<option value="3">GMT +3</option>
+						<option value="tzaa">GMT +3:30 Iran</option>
+						<option value="4">GMT +4</option>
+						<option value="tzaab">GMT +4:30 Afghanistan</option>
+						<option value="5">GMT +5</option>
+						<option value="tzbb">GMT +5:30 India/Sri Lanka</option>
+						<option value="tzcc">GMT +5:45 Nepal</option>
+						<option value="6">GMT +6</option>
+						<option value="tzdd">GMT +6:30 Burma (Myanmar)</option>
+						<option value="7">GMT +7</option>
+						<option value="8">GMT +8</option>
+						<option value="9">GMT +9</option>
+						<option value="tzee">GMT +9:30 Australia (Northern Territory)</option>
+						<option value="10">GMT +10</option>
+						<option value="tzff1">GMT +10:30</option>
+						<option value="tzff">GMT +10:30 Lord Howe Island (Australia) dst +11</option>
+						<option value="11">GMT +11</option>
+						<option value="tzgg">GMT +11:30 Norfolk Isl. (Australia)</option>
+						<option value="12">GMT +12</option>
+						<option value="tzhh">GMT +12:45 Chatham Island (New Zealand)</option>
+						<option value="13">GMT +13 Kiribati (Phoenix Islands)</option>
+						<option value="14">GMT +14 Kiribati (Christmas Islands)</option>
+				</field>
+				<field name="daylight10" 
+						type="list" 
+						default="" 
+						label="Daylight Savings Time"
+						description="Daylight Saving Time in the US starts in March and goes thru November
+								In most European countries it starts in March and Goes thru October">
+						<option value="0">Does not use Daylight Saving Time</option>
+						<option value="1">European DST</option>
+						<option value="2">United States DST</option>
+						<option value="3">Australia Normal DST</option>
+						<option value="4">Australia (Tasmania) DST</option>
+						<option value="5">Iraq DST (Start (1 April) End (1 October))</option>
+				</field>				
+			</fieldset>
+			<fieldset
+				name="advanced">
+				
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+		
+				<field type="spacer"/>
+				
+								<field  type="spacer"/>
+				<field 
+					name="ZoneFirst" 
+					type="list" 
+					default="" 
+					label="Display Zone Text First" 
+					description="Determines whether or not the text displays first if you want the city displayed before the time, choose yes here">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+				</field>
+				<field type="spacer"/>
+				<field 
+					name="Display_Style" 
+					type="list" 
+					default="" 
+					label="Display Vertical or Horizontal" 
+					description="Vertical goes well in the left or right area of the browser.  Horizontal works well if you have an area to display it">
+						<option value="0">Vertical</option>
+						<option value="1">Horizontal</option>
+				</field>
+				
+				<field  type="spacer"/>
+				
+				<field name="DispAM_PM" 
+					type="list" 
+					default="1" 
+					label="Display Format" 
+					description="Show the time in AM/PM Format or 24 Hour Format">
+						<option value="0">24 hour Format</option>
+						<option value="1">AM/PM   Format</option>
+				</field>
+				
+				<field  type="spacer"/>
+				
+				<field 
+					name="Display_Seconds" 
+					type="list" 
+					default="1" 
+					label="Display the seconds" 
+					description="Turn off the seconds if you do not want to see them">
+						<option value="0">No Seconds</option>
+						<option value="1">Show the Seconds</option>
+				</field>
+				<field 
+					name="DispDay" 
+					type="list" 
+					default="" 
+					label="Display Weekday" 
+					description="This will display the day of the week for each timezone.">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+				</field>
+				<field 
+					name="Show_Debug" 
+					type="list" 
+					default="" 
+					label="Show Debug Info." 
+					description="Will display a div with some debug info">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
