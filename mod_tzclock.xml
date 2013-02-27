@@ -11,18 +11,18 @@
     <description> This is a javascript time module to display up to 10 different time zones.<br/>
     <br/><br/>  <h2>Usage</h2>You must select the timezone difference from UTC/GMT and the descriptive tag you want displayed 
     for each time zone you want to display.  If the descriptive text for a time zone is blank it will not be displayed.  <br/><br/>  
-  Daylight Saving Time is calculated for US, Europe, Australia and Iraq.
+	Daylight Saving Time is calculated for US, Europe, Australia and Iraq.
     </description>
 
 <files>
     <filename module="mod_tzclock">mod_tzclock.php</filename>
-    <filename module="mod_tzclock">mod_tzclock.xml</filename>
+	<filename module="mod_tzclock">mod_tzclock.xml</filename>
 </files>
 <config>
 		<fields name="params">
 			<fieldset name="basic">
  
-<field name="&lt;b&gt;Time Zone 1&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 1</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone1" 
 					type="text" 
 					default="" 
@@ -89,7 +89,7 @@
 				</field>
 
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 2&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 2</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone2" 
 					type="text" 
 					default="" 
@@ -156,7 +156,7 @@
 				</field>
 
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 3&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 3</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone3" 
 					type="text" 
 					default="" 
@@ -223,7 +223,7 @@
 				</field>
 				
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 4&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 4</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone4" 
 					type="text" 
 					default="" 
@@ -290,7 +290,7 @@
 				</field>
 				
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 5&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 5</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone5" 
 					type="text" 
 					default="" 
@@ -357,7 +357,7 @@
 				</field>
 				
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 6&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 6</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone6" 
 					type="text" 
 					default="" 
@@ -424,7 +424,7 @@
 				</field>
 				
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 7&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 7</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone7" 
 					type="text" 
 					default="" 
@@ -491,7 +491,7 @@
 				</field>
 				
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 8&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 8</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone8" 
 					type="text" 
 					default="" 
@@ -558,7 +558,7 @@
 				</field>
 				
 <field type="spacer" />
-<field name="&lt;b&gt;Time Zone 9&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 9</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone9" 
 					type="text" 
 					default="" 
@@ -625,7 +625,7 @@
 				</field>
 
 <field type="spacer" />				
-<field name="&lt;b&gt;Time Zone 10&lt;/b&gt; _______________________________________________________" type="spacer"/>
+<field name="<b>Time Zone 10</b> _______________________________________________________" type="spacer"/>
 				<field name="Zone10" 
 					type="text" 
 					default="" 
