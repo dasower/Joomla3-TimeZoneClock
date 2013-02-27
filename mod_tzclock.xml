@@ -16,7 +16,7 @@
 
 <files>
     <filename module="mod_tzclock">mod_tzclock.php</filename>
-	<filename module="mod_tzclock">mod_tzclock.xml</filename>
+    <filename module="mod_tzclock">mod_tzclock.xml</filename>
 </files>
 <config>
 		<fields name="params">
